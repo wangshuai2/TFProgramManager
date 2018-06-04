@@ -1,4 +1,6 @@
 const CONF = {
+  rootDir: __dirname,
+
   port: '5758',
   rootPathname: '',
 

@@ -9,7 +9,7 @@ module.exports = async ctx => {
     staff_name: reqbody.title,
     staff_img: reqbody.imgurl
   }
-  await mysql('staff_list').insert(addData).then(res => {
+  await mysql('staff_list').update(addData).where('staff_id', reqbody.staff_id).then(res => {
     ctx.state.code = 0
     ctx.state.data = res
   }).catch(err => {
