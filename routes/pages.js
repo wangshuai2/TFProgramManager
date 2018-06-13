@@ -12,6 +12,9 @@ const options = {
   keepExtensions: true
 }
 
+/**
+ * 曲谱操作部分
+ */
 // 获取曲谱列表
 router.get('/staff_list.json', controller.staff.list)
 
@@ -24,13 +27,31 @@ router.post('/staff_upload.json', koaForm(options), controller.staff.upload)
 // 根据曲谱ID 获取曲谱
 router.get('/staff.json', controller.staff.staff)
 
-// 根据曲谱名称获取曲谱
-// router.get('/staff_name.json')
-
 // 删除曲谱
 router.post('/staff_delete.json', controller.staff.delete)
 
 // 更新曲谱
 router.post('staff_update.json', controller.staff.update)
+
+/**
+ * 作者操作部分
+ */
+// 获取作者列表
+router.get('/author_list.json', controller.author.list)
+
+// 提交作者
+router.post('/author_add.json', controller.author.add)
+
+// 上传作者图片
+router.post('/author_upload.json', koaForm(options), controller.author.upload)
+
+// 根据作者ID 获取作者
+router.get('/author.json', controller.author.author)
+
+// 删除作者
+router.post('/author_delete.json', controller.author.delete)
+
+// 更新作者
+router.post('author_update.json', controller.author.update)
 
 module.exports = router
