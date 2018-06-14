@@ -20,6 +20,7 @@ module.exports = async ctx => {
           reject(err)
           throw new Error(err)
         }
+        console.log('图片上传完成！')
         resolve(result)
       })
     })

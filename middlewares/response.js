@@ -9,8 +9,8 @@ module.exports = async function (ctx, next) {
     await next()
 
     // 允许跨域
-    // ctx.set('Access-Control-Allow-Origin', '*')
-    // ctx.set('Access-Control-Allow-Headers', '*')
+    ctx.set('Access-Control-Allow-Origin', '*')
+    ctx.set('Access-Control-Allow-Headers', '*')
 
     // 处理响应结果
     // 如果直接写入在 body 中，则不作处理
