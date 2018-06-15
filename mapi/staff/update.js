@@ -9,7 +9,8 @@ module.exports = async ctx => {
     staff_name: reqbody.title,
     staff_img: reqbody.imgurl
   }
-  await mysql('staff_list').update(addData).where('staff_id', reqbody.staff_id).then(res => {
+  console.log(addData)
+  await mysql('staff_list').where('staff_id', '=', reqbody.staff_id).update(addData).then(res => {
     ctx.state.code = 0
     ctx.state.data = res
   }).catch(err => {

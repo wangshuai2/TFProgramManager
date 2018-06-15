@@ -11,7 +11,7 @@ module.exports = async ctx => {
       author_name: ctx.request.query.name
     }
   }
-  await mysql('author_list').select('*').where(w).then(res => {
+  await mysql('author_list').select(w).then(res => {
     ctx.state.code = 0
     ctx.state.data = res
   }).catch(err => {

@@ -4,8 +4,8 @@ module.exports = async ctx => {
   const reqbody = ctx.request.body
   const addData = {
     author_desc: reqbody.desc,
-    author_name: reqbody.title
-    // author_img: reqbody.imgurl
+    author_name: reqbody.title,
+    author_img: reqbody.imgurl
   }
   await mysql('author_list').insert(addData).then(res => {
     ctx.state.code = 0

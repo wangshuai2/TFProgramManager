@@ -13,7 +13,7 @@ module.exports = async ctx => {
   }
   await mysql('staff_list').select('*').where(w).then(res => {
     ctx.state.code = 0
-    ctx.state.data = res
+    ctx.state.data = res[0]
   }).catch(err => {
     ctx.state.code = -1
     throw new Error(err)
