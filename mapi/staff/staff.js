@@ -16,7 +16,7 @@ module.exports = async ctx => {
       staff_name: ctx.request.query.name
     }
     sqlwhere = {
-      key: 'staff_id',
+      key: 'staff_name',
       value: ctx.request.query.name
     }
   }
