@@ -5,7 +5,8 @@ module.exports = async ctx => {
   const addData = {
     author_desc: reqbody.desc,
     author_name: reqbody.title,
-    author_img: reqbody.imgurl
+    author_img: reqbody.imgurl,
+    author_thumb: reqbody.thumb
   }
   await mysql('author_list').insert(addData).then(res => {
     ctx.state.code = 0

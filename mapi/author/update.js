@@ -5,9 +5,10 @@ module.exports = async ctx => {
   const addData = {
     author_desc: reqbody.desc,
     author_name: reqbody.title,
-    author_img: reqbody.imgurl
+    author_img: reqbody.imgurl,
+    author_thumb: reqbody.thumb
   }
-  await mysql('staff_list').update(addData).where('author_id', reqbody.author_id).then(res => {
+  await mysql('staff_list').update(addData).where('author_id', '=', reqbody.author_id).then(res => {
     ctx.state.code = 0
     ctx.state.data = res
   }).catch(err => {

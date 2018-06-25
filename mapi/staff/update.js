@@ -7,7 +7,8 @@ module.exports = async ctx => {
     author_id: reqbody.author_id,
     staff_desc: reqbody.desc,
     staff_name: reqbody.title,
-    staff_img: reqbody.imgurl
+    staff_img: reqbody.imgurl,
+    staff_thumb: reqbody.thumb
   }
   console.log(addData)
   await mysql('staff_list').where('staff_id', '=', reqbody.staff_id).update(addData).then(res => {
